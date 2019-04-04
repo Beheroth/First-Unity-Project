@@ -37,6 +37,7 @@ public class PlayerControler : MonoBehaviour
 
             nextFire = nextFire - myTime;
             myTime = 0.0F;
+			GetComponent<AudioSource>().Play();
         }
     }
 
