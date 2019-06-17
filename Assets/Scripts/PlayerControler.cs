@@ -16,7 +16,9 @@ public class PlayerControler : MonoBehaviour
     public Boundary boundary;
 
     public GameObject shot;
-    public Transform shotSpawn;
+    public Transform shotSpawnL;
+    public Transform shotSpawnR;
+    private Transform shotSpawn;
     public float fireDelta = 0.5F;
     private float nextFire = 0.5F;
     private GameObject newProjectile;
@@ -30,8 +32,16 @@ public class PlayerControler : MonoBehaviour
 
         if (Input.GetButton("Fire1") && myTime > nextFire)
         {
+            if (shotSpawn == shotSpawnL)
+            {
+                shotSpawn = shotSpawnR;
+            }
+            else
+            {
+                shotSpawn = shotSpawnL;
+            }
             nextFire = myTime + fireDelta;
-            newProjectile = Instantiate(shot, transform.position, transform.rotation) as GameObject;
+            newProjectile = Instantiate(shot, shotSpawn.position, shotSpawn.rotation) as GameObject;
 
             // create code here that animates the newProjectile 
 
