@@ -6,9 +6,12 @@ public class Mover : MonoBehaviour
 {
     public float speed;
 
+    private Rigidbody rb;
+
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody>().velocity = (transform.forward) * speed;
+        rb = GetComponent<Rigidbody>();
+        rb.velocity = 1 * (transform.forward) * speed;
     }
 }

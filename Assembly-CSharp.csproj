@@ -63,17 +63,28 @@
      <Compile Include="Assets\_Complete-Game\Scripts\Done_PlayerController.cs" />
      <Compile Include="Assets\_Complete-Game\Scripts\Done_RandomRotator.cs" />
      <Compile Include="Assets\_Complete-Game\Scripts\Done_WeaponController.cs" />
+     <Compile Include="Assets\Asset Store\PowerUp\Scripts\CustomizablePowerUp.cs" />
+     <Compile Include="Assets\Asset Store\PowerUp\Scripts\PowerUpManager.cs" />
+     <Compile Include="Assets\Asset Store\PowerUp\Scripts\PowerUpRotation.cs" />
+     <Compile Include="Assets\Asset Store\PowerUp\Scripts\ScaleParticles.cs" />
+     <Compile Include="Assets\Asset Store\PowerUp\Scripts\TakeablePowerUp.cs" />
+     <Compile Include="Assets\Asset Store\PowerUp\Scripts\Utility\Singleton.cs" />
      <Compile Include="Assets\Scripts\BGScroller.cs" />
+     <Compile Include="Assets\Scripts\BossFight.cs" />
      <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
      <Compile Include="Assets\Scripts\DestroyByContact.cs" />
      <Compile Include="Assets\Scripts\DestroyByTime.cs" />
+     <Compile Include="Assets\Scripts\EvasiveManeuvre.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\GameUI.cs" />
      <Compile Include="Assets\Scripts\Mover.cs" />
-     <Compile Include="Assets\Scripts\PlayerControler.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PowerUp_Red.cs" />
      <Compile Include="Assets\Scripts\RandomRotator.cs" />
+     <Compile Include="Assets\Scripts\WeaponController.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-     <None Include="Assets\StarSparrow\ReadMe.txt" />
-     <None Include="Assets\StarSparrow\Materials\Unified\UnifiedMaterials.txt" />
+     <None Include="Assets\Asset Store\StarSparrow\ReadMe.txt" />
+     <None Include="Assets\Asset Store\StarSparrow\Materials\Unified\UnifiedMaterials.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/Arnaud/Documents/GitHub/First-Unity-Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

@@ -6,13 +6,16 @@ public class DestroyByContact : MonoBehaviour
 {
     public GameObject explosion;
     public GameObject playerExplosion;
+    public float dropRate;
+
     public int scoreValue;
-    private GameController gameController;
+
+    protected GameController gameController;
 
     void Start()
     {
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
-        if(gameControllerObject != null)
+        if (gameControllerObject != null)
         {
             gameController = gameControllerObject.GetComponent<GameController>();
         }
@@ -25,18 +28,33 @@ public class DestroyByContact : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         //Debug.Log(other.name);
-        if (other.tag == "Boundary")
+        if (other.CompareTag("Boundary") || other.CompareTag("Boss") || other.CompareTag("Enemy") || other.CompareTag("Drop"))
         {
             return;
         }
-        Instantiate(explosion, transform.position, transform.rotation);
+
+        if (explosion != null)
+        {
+            Instantiate(explosion, transform.position, transform.rotation);
+        }
+
+        if (dropRate > 0f)
+        {
+            GameObject drop = gameController.RollDrop(dropRate);
+            if(drop!= null)
+            {
+                Instantiate(drop, transform.position, transform.rotation);
+            }
+        }
+
         if (other.tag == "Player")
         {
-            Instantiate(playerExplosion, transform.position, transform.rotation);
+            Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+            gameController.setGameOver(true);
         }
-        // Destroy everything that leaves the trigger
-        Destroy(other.gameObject);  //NB: marks object to be destroyed at the end of the frame
+
         Destroy(gameObject);
+        Destroy(other.gameObject);
         gameController.AddScore(scoreValue);
     }
 }
